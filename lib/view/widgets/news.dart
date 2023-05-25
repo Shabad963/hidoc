@@ -29,7 +29,7 @@ class NewsWidget extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Description(title: data.news[0].title),
-          Image.network(data.news[0].urlToImage)
+          Center(child: Image.network(data.trandingArticle[0].articleImg,width: 200))
         ]));
   }
 }

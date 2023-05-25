@@ -21,7 +21,7 @@ class TrendingArticles extends StatelessWidget {
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.transparent,
-          border: Border.all(color: Colors.grey),
+          border: Border.all(color: Color(0xffDCDCDC)),
         ),
         child: Column(children: [
           MainTitle(
@@ -31,8 +31,8 @@ class TrendingArticles extends StatelessWidget {
           Container(
               height: height / 5,
               width: width / 1.3,
-              color: Colors.grey,
-              child: Icon(Icons.newspaper, size: width / 3)),
+              color: Color(0xffDCDCDC),
+              child: Icon(Icons.newspaper, size: width / 3,color: Colors.grey)),
                SizedBox(height: 10),
           Description(
               title: data.trandingArticle[0].articleTitle),
@@ -47,9 +47,9 @@ class TrendingArticles extends StatelessWidget {
               Container(
                   height: height / 10,
                   width: width / 4,
-                  color: Colors.grey,
+                  color: Color(0xffDCDCDC),
                   child: Icon(Icons.newspaper,
-                      size: width / 10)),
+                      size: width / 10,color: Colors.grey)),
                       SizedBox(width: 10),
               Expanded(
                 child: SizedBox(

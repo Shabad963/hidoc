@@ -34,12 +34,13 @@ class TopCard extends StatelessWidget {
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10.0),
                 topRight: Radius.circular(10.0)),
-            color: Colors.grey,
+            color: greyColor,
           ),
           child: Center(
               child: Icon(
             Icons.newspaper,
             size: width / 3,
+            color: Colors.grey
           )),
         ),
         Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hidoc/config/colors.dart';
 
 import 'package:hidoc/model/article_model.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -17,15 +18,13 @@ class DropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: width,
         child: Padding(
           padding: EdgeInsets.only(left: 8.0),
           child: Card(
+             shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),),
             child: SizedBox(
-              height: 50.0,
-              // 35,
-              // width: 40.0,
-              //  150,
+              height: 60.0,
               child: DropdownButtonHideUnderline(
                 child: DropdownButton2(
                   // itemPadding: EdgeInsets.only(left: 8),
@@ -36,7 +35,7 @@ class DropDown extends StatelessWidget {
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 10,
-                      color: const Color(0xffB0B0B0),
+                      color: blackColor,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -47,21 +46,21 @@ class DropDown extends StatelessWidget {
                   onChanged: (String? newValue) async {},
                   items: <String>[
                     data.specialityName,
-                    "Citical care",
+                    "Critical care",
                     "Other",
                     "Other"
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left:100.0),
                         child: Text(
                           value,
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                              fontSize: 10,
-                              color: const Color(0xffB0B0B0),
-                              fontWeight: FontWeight.w600,
+                              fontSize: 13,
+                              color:  blackColor,
+                             
                             ),
                           ),
                         ),

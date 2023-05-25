@@ -23,7 +23,6 @@ class HidocBulletin extends StatelessWidget {
           MainTitle(
             title: "Hidoc Bulletin",
           ),
-          SizedBox(height: 10),
           SizedBox(
             child: ListView.builder(
                 shrinkWrap: true,

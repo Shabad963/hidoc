@@ -42,9 +42,9 @@ class Description extends StatelessWidget {
       maxLines: 3,
       style: GoogleFonts.poppins(
         textStyle: TextStyle(
-          fontSize: 10,
-          color: const Color(0xffB0B0B0),
-          fontWeight: FontWeight.w600,
+          fontSize: 12,
+          color: blackColor,
+          
         ),
       ),
     );

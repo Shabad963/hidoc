@@ -18,7 +18,7 @@ class Trending extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.blueGrey,
+          color: Color.fromARGB(255, 191, 213, 224),
           borderRadius:
               BorderRadius.all(Radius.circular(10.0)),
         ),
@@ -28,7 +28,6 @@ class Trending extends StatelessWidget {
             MainTitle(
               title: "Trending Hidoc Bulletin",
             ),
-             SizedBox(height: 15),
             SizedBox(
               child: ListView.builder(
                   shrinkWrap: true,
