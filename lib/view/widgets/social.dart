@@ -7,9 +7,11 @@ class SocialCard extends StatelessWidget {
   const SocialCard({
     super.key,
     required this.width,
+    this.isWeb = false
   });
 
   final double width;
+  final bool? isWeb;
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +20,23 @@ class SocialCard extends StatelessWidget {
         
         width: width,
         decoration: BoxDecoration(
-          color: Colors.yellow.withOpacity(0.2),
+          color: isWeb == false ?Colors.yellow.withOpacity(0.2) : Colors.lightBlue.withOpacity(0.2),
         ),
         child: Row(
           children: [
-            Column(children: [
-              SubTitle(
+            SizedBox(
+              width: width / 2,
+              child: SubTitle(
                 title:
-                    "Social network for doctors - \nA special feature on Hidoc Dr.",
+                    "Social network for doctors - A special feature on Hidoc Dr.",
               ),
-            ]),
+            ),
             Expanded(
               child: Container(
                   height: 40,
-                  width: width / 7,
+                  width: 50,
                   decoration: BoxDecoration(
-                     color: Colors.orange,
+                     color: isWeb == false ?Colors.orange : Colors.blue,
                     borderRadius: BorderRadius.all(
                 
                     Radius.circular(25.0)),),

@@ -16,34 +16,37 @@ class BottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 250,
-      width: width > webScreenSize ? width / 2 : width,
+      width: width > webScreenSize ? width / 2.2 : width,
         padding: EdgeInsets.all(12),
        
         decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(color: Color.fromARGB(255, 143, 107, 107)),
         ),
-        child: Column(children: [
-          RowContainerWidget(
-            height: height,
-            width: width,
-            title: ' Quizzes',
-            icon: Icons.quiz,
-            subtitle:
-                'Participate & win exciting prizes',
-          ),
-          Divider(
-            thickness: 2,
-          ),
-          RowContainerWidget(
-            height: height,
-            width: width,
-            title: ' Medical Calculators',
-            icon: Icons.calculate_outlined,
-            subtitle:
-                'Get Acces to 800+ Evidence based calculators',
-          ),
-        ]));
+        child: Center(
+          child: Column(children: [
+            SizedBox(height: 40),
+            RowContainerWidget(
+              height: height,
+              width: width,
+              title: ' Quizzes',
+              icon: Icons.quiz,
+              subtitle:
+                  'Participate & win exciting prizes',
+            ),
+            Divider(
+              thickness: 2,
+            ),
+            RowContainerWidget(
+              height: height,
+              width: width,
+              title: ' Medical Calculators',
+              icon: Icons.calculate_outlined,
+              subtitle:
+                  'Get Acces to 800+ Evidence based calculators',
+            ),
+          ]),
+        ));
   }
 }
 
@@ -71,23 +74,27 @@ class RowContainerWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-            height: height / 10,
-            width: width * 0.13,
+            height: 50,
+            width: 100,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.lightBlueAccent,
             ),
-            child: Icon(icon, size: width / 15, color: Colors.blue)),
+            child: Icon(icon, size: 30, color: Colors.blue)),
             
-        SizedBox(
-          width: width / 2.5,
-          child: MainTitle(
-            title: title,
+        Expanded(
+          child: SizedBox(
+            width: width / 2.5,
+            child: SubTitle(
+              title: title,
+            ),
           ),
         ),
-        SizedBox(
-          width: width / 3.5,
-          child: Description(title: subtitle),
+        Expanded(
+          child: SizedBox(
+            width: width / 3.5,
+            child: Description(title: subtitle),
+          ),
         ),
       ],
     );

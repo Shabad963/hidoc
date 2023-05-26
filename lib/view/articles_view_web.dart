@@ -113,12 +113,12 @@ class ArticlesViewWeb extends StatelessWidget {
                     children: [
                       NewsWidget(height: height, data: data, width: width,),
                        SizedBox(width: 20),
-                  BottomWidget(height: height, width: width),
+                  Expanded(child: BottomWidget(height: height, width: width)),
                     ],
                   ),
                  
                   SizedBox(height: 20),
-                  SocialCard(width: width),
+                  SocialCard(width: width,isWeb: true),
                 ],
               ),
             ),

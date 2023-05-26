@@ -35,13 +35,15 @@ class NewsWidget extends StatelessWidget {
               ),
               SizedBox(height: 10,width: 10),
           SizedBox(
-          width:  width > webScreenSize ? width /2.5 : width,
+          width:  width > webScreenSize ? width /4 : width,
             child: Description(title: data.news[0].title)),
             ],
           ),
           
-           SizedBox(height: 10,width:10),
-          Expanded(child: Center(child: Image.network(data.trandingArticle[0].articleImg,width: 200)))
+           SizedBox(height: 5,width:5),
+          Expanded(child: Center(child: SizedBox(
+             height: 300,width: 500,
+            child: Image.network(data.trandingArticle[0].articleImg))))
         ]) : Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -55,8 +57,10 @@ class NewsWidget extends StatelessWidget {
             ],
           ),
           
-           SizedBox(height: 10,width:10),
-          Center(child: Image.network(data.trandingArticle[0].articleImg,width: width > webScreenSize ? width /4 : width,))
+           SizedBox(height: 5,width:5),
+          Expanded(child: Center(child: SizedBox(
+            height: 300,width: 500,
+            child: Image.network(data.trandingArticle[0].articleImg))))
         ]));
   }
 }

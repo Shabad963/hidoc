@@ -52,7 +52,7 @@ class TopCardWeb extends StatelessWidget {
         ),
         Container(
             height: height / 3,
-            width: width / 1.8,
+            width: width / 1.6,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
