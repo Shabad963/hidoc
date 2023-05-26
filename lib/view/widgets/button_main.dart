@@ -2,15 +2,17 @@
 import 'package:flutter/material.dart';
 import 'package:hidoc/config/colors.dart';
 
-class ButtonOrange extends StatelessWidget {
-  const ButtonOrange({
+class ButtonMain extends StatelessWidget {
+  const ButtonMain({
     super.key,
     required this.width,
     required this.title,
+    this.isWeb = false,
   });
 
   final double width;
   final String title;
+  final bool? isWeb;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ButtonOrange extends StatelessWidget {
         Container(
             height: 50,
             width: width,
-            color: Colors.orange,
+            color: isWeb == false ?Colors.orange: Colors.blue,
             child: Center(child: Text(title,style: TextStyle(color: whiteColor)))),
         SizedBox(height: 10),
       ],

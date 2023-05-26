@@ -15,6 +15,8 @@ class BottomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 250,
+      width: width > webScreenSize ? width / 2 : width,
         padding: EdgeInsets.all(12),
        
         decoration: BoxDecoration(

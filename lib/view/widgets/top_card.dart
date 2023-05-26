@@ -39,12 +39,12 @@ class TopCard extends StatelessWidget {
           child: Center(
               child: Icon(
             Icons.newspaper,
-            size: width / 3,
+            size: 80,
             color: Colors.grey
           )),
         ),
         Container(
-            height: height / 4,
+            height: height / 3.5,
             width: width,
             decoration: BoxDecoration(
               boxShadow: <BoxShadow>[

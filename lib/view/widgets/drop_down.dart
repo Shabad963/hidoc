@@ -9,15 +9,17 @@ class DropDown extends StatelessWidget {
   const DropDown({
     super.key,
     required this.width,
-    required this.data,
+    required this.data, required this.isWeb,
   });
 
   final double width;
   final Data data;
+  final bool isWeb;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: width,
         child: Padding(
           padding: EdgeInsets.only(left: 8.0),
           child: Card(
@@ -52,8 +54,8 @@ class DropDown extends StatelessWidget {
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left:100.0),
+                      child: Center(
+                        // padding: const EdgeInsets.only(left:100.0),
                         child: Text(
                           value,
                           style: GoogleFonts.poppins(

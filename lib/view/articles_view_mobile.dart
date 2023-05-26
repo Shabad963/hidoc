@@ -11,7 +11,7 @@ import 'package:hidoc/view/widgets/drop_down.dart';
 import 'package:hidoc/view/widgets/explore_articles.dart';
 import 'package:hidoc/view/widgets/hidoc_bulletin.dart';
 import 'package:hidoc/view/widgets/latest_articles.dart';
-import 'package:hidoc/view/widgets/orange_button.dart';
+import 'package:hidoc/view/widgets/button_main.dart';
 import 'package:hidoc/view/widgets/social.dart';
 import 'package:hidoc/view/widgets/top_card.dart';
 import 'package:hidoc/view/widgets/trending.dart';
@@ -19,8 +19,8 @@ import 'package:hidoc/view/widgets/trending_articles.dart';
 import 'package:hidoc/view/widgets/news.dart';
 
 
-class ArticlesView extends StatelessWidget {
-  ArticlesView({super.key});
+class ArticlesViewMobile extends StatelessWidget {
+  ArticlesViewMobile({super.key});
 
   ArticlesController controller = Get.put(ArticlesController());
 
@@ -50,22 +50,22 @@ class ArticlesView extends StatelessWidget {
                     children: [
                       AppBarWidget(height: height, width: width),
             SizedBox(height: height * 0.02),
-                      DropDown(width: width, data: data),
+                      DropDown(width: width, data: data, isWeb: false,),
                       TopCard(height: height, width: width, data: data),
-                      HidocBulletin(width: width, data: data),
-                      Trending(data: data),
+                      HidocBulletin(width: width / 3, data: data),
+                      Trending(data: data, width: width,),
                    SizedBox(height: 10),
-                      ButtonOrange(
+                      ButtonMain(
                         width: width / 1.3,
                         title: 'Read more bulletins',
                       ),
                       SizedBox(height: 10),
-                      LatestArticles(data: data),
+                      LatestArticles(data: data, width: width,),
                       SizedBox(height: 20),
                       TrendingArticles(height: height, width: width, data: data),
                         SizedBox(height: 20),
-                      ExploreArticles(data: data),
-                      ButtonOrange(
+                      ExploreArticles(data: data, width: width,),
+                      ButtonMain(
                         width: width,
                         title: 'Explore hidoc Dr',
                       ),
@@ -74,7 +74,7 @@ class ArticlesView extends StatelessWidget {
                         title: "What's more on Hidoc Dr.",
                       ),
                        SizedBox(height: 20),
-                       NewsWidget(height: height, data: data),
+                       NewsWidget(height: height, data: data, width: width,),
                       SizedBox(height: 20),
                       BottomWidget(height: height, width: width),
                        SizedBox(height: 20),

@@ -3,21 +3,24 @@ import 'package:hidoc/config/colors.dart';
 import 'package:hidoc/config/common.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({
+   AppBarWidget({
     super.key,
     required this.height,
     required this.width,
+    this.isWeb = false,
+
   });
 
   final double height;
   final double width;
+  final bool? isWeb;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(height: height * 0.05),
-        Container(
+      isWeb! == false ?  Container(
             height: height * 0.04,
             width: width * 0.2,
             decoration: BoxDecoration(
@@ -31,7 +34,7 @@ class AppBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: whiteColor,
                         fontWeight: FontWeight.bold,
-                        fontSize: 15)))),
+                        fontSize: 15)))):SizedBox(),
         SizedBox(height: height * 0.02),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

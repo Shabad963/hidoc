@@ -7,14 +7,16 @@ import 'package:hidoc/model/article_model.dart';
 class LatestArticles extends StatelessWidget {
   const LatestArticles({
     super.key,
-    required this.data,
+    required this.data, required this.width,
   });
 
   final Data data;
+   final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width > webScreenSize ? width / 3.2 : width,
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.transparent,

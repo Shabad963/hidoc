@@ -17,41 +17,44 @@ class HidocBulletin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          MainTitle(
-            title: "Hidoc Bulletin",
-          ),
-          SizedBox(
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: data.trandingArticle.length,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (contex, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 6,
-                        width: width / 3,
-                        color: primaryColor,
-                      ),
-                      SizedBox(height: 10),
-                      SubTitle(title: data.trandingArticle[index].articleTitle),
-                       SizedBox(height: 10),
-                      Description(
-                          title:
-                              data.trandingArticle[index].articleDescription),
-                                                    SizedBox(height: 10),
-
-                      ReadMore(),
-                      SizedBox(height: 20),
-                    ],
-                  );
-                }),
-          )
-        ],
+      child: Container(
+        width:width > webScreenSize ? MediaQuery.of(context).size.width /2 : null,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MainTitle(
+              title: "Hidoc Bulletin",
+            ),
+            SizedBox(
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: data.trandingArticle.length,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (contex, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 6,
+                          width: width / 3,
+                          color: primaryColor,
+                        ),
+                        SizedBox(height: 10),
+                        SubTitle(title: data.trandingArticle[index].articleTitle),
+                         SizedBox(height: 10),
+                        Description(
+                            title:
+                                data.trandingArticle[index].articleDescription),
+                                                      SizedBox(height: 10),
+      
+                        ReadMore(),
+                        SizedBox(height: 20),
+                      ],
+                    );
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }

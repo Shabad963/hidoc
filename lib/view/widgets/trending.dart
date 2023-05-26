@@ -9,14 +9,17 @@ import 'package:hidoc/model/article_model.dart';
 class Trending extends StatelessWidget {
   const Trending({
     super.key,
-    required this.data,
+    required this.data, required this.width,
   });
+  
+  final double width;
 
   final Data data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+    width:  width > webScreenSize ? width /2 : width,
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 191, 213, 224),
           borderRadius:

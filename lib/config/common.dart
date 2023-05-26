@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hidoc/config/colors.dart';
 
+
+const webScreenSize = 600;
+
+
 class MainTitle extends StatelessWidget {
   final String title;
   const MainTitle({super.key, required this.title});
